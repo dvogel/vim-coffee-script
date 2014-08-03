@@ -53,7 +53,9 @@ hi def link coffeeExtendedOp coffeeOperator
 syn match coffeeSpecialOp /[,;]/ display
 hi def link coffeeSpecialOp SpecialChar
 
-syn match coffeeBoolean /\<\%(true\|on\|yes\|false\|off\|no\)\>/ display
+syn match coffeeBoolean /\<\%(true\|on\|yes\|false\|off\|no\)\>/ display contains=coffeeBooleanTrue,coffeeBooleanFalse
+syn match coffeeBooleanTrue /\<\%(true\|on\|yes\)\>/ display contained
+syn match coffeeBooleanFalse /\<\%(false\|off\|no\)\>/ display contained
 hi def link coffeeBoolean Boolean
 
 syn match coffeeGlobal /\<\%(null\|undefined\)\>/ display
